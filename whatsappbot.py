@@ -70,7 +70,7 @@ class WhatsAppBot:
         print("No WhatsApp")
         self.nowhatsapplist.append([self.name, self.phone_number])
 
-    def loopfuntcion(self,msg):
+    def loopfuntcion(self, msg):
         try:
             self.sendmsg(msg)
         except Exception:

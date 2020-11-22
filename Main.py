@@ -20,8 +20,15 @@ root.columnconfigure(0, weight=1)
 root.rowconfigure(2, weight=1)
 root.columnconfigure(2, weight=1)
 
+root.after(5000, lambda: root.focus_force())
+
+
 contents = Frame(root)
 contents.grid(row=1, column=1)
+
+p1 = PhotoImage(file='whatsapp.png')
+root.iconphoto(False, p1)
+
 
 def browsefunc():
     filename = filedialog.askopenfilename(filetypes=(("xlsx files", "*.xlsx"), ("All files", "*.*")))
