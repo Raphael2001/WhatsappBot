@@ -20,9 +20,6 @@ root.columnconfigure(0, weight=1)
 root.rowconfigure(2, weight=1)
 root.columnconfigure(2, weight=1)
 
-root.after(5000, lambda: root.focus_force())
-
-
 contents = Frame(root)
 contents.grid(row=1, column=1)
 
@@ -35,15 +32,19 @@ def browsefunc():
     ent1.delete(0, 'end')
     ent1.insert(END, filename)
 
-    if(ent1.get() == ''):
+    if ent1.get() == '':
         b2.configure(state="disabled")
     else:
         b2.configure(state="normal")
 
 
 def submit():
-    bot = whatsappbot.WhatsAppBot(ent1.get())
+    bot = whatsappbot.WhatsAppBot(ent1.get(), root)
     bot.main()
+
+
+def close():
+    root.destroy()
 
 
 ent1 = Entry(root, font=40)
@@ -59,5 +60,10 @@ b1.grid(row=2, columnspan=2)
 b2 = Button(root, text="Submit", font=40, command=submit,
                 background='#FFFFFF', foreground="#009688", state="disabled", highlightcolor='#009688', highlightbackground='#009688' )
 b2.grid(row=2, columnspan=3)
+
+
+b3 = Button(root, text="Close", font=40, command=close,
+                background='#FFFFFF', foreground="#009688",  highlightcolor='#009688', highlightbackground='#009688' )
+b3.grid(row=3, column=3)
 
 root.mainloop()

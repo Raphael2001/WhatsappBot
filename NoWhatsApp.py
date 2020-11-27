@@ -6,7 +6,7 @@ filename = "NoWhatsApp.csv"
 
 class Create_CSV():
 
-    def __init__(self, list):
+    def __init__(self, list ):
         rows = list
 
 
