@@ -35,7 +35,6 @@ class WhatsAppBot:
                 self.clear_list()
                 self.append_to_list()
                 # msg = "Hello " + self.client.name + ", how are you today? Tell me about your self!"
-                # msg = "היי אלו שעות אחרונות בהחלט להנחות גדולות באתר שלנן והייתי רוצה להעניק לך הנחה נוספת למבצעים הקיימים אצלנו באהבה מוריס קוד הקופון: BLACK30 לרכישה: https://bit.ly/blackfriday-homeot להסרה מהרשימת תפוצה שלי יש להשיב את המילה ״הסר״"
 
                 flag = False
                 while flag is False:
@@ -66,16 +65,16 @@ class WhatsAppBot:
     #     msg_box = self.driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[2]')
     #     msg_box.send_keys(msg + Keys.ENTER)
     #
+#     def sendmsg(self):
+#         msg_box = self.driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[2]')
+#         msg_box.send_keys(" ")
+
     def sendmsg(self):
         msg_box = self.driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[2]')
-        msg_box.send_keys(" ")
-
-    # def sendmsg(self):
-    #     msg_box = self.driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[2]')
-    #     for i in range(0, len(self.msg)):
-    #         msg_box.send_keys(self.msg[i])
-    #         self.line()
-    #     msg_box.send_keys(Keys.ENTER)
+        for i in range(0, len(self.msg)):
+            msg_box.send_keys(self.msg[i])
+            self.line()
+        msg_box.send_keys(Keys.ENTER)
 
     def print_worksheet(self):
         for row_number in range(0, self.total_rows):
@@ -114,6 +113,8 @@ class WhatsAppBot:
         self.msg = []
 
     def append_to_list(self):
+        #write you massage here.
+        #each line is new line at the massage
         self.msg.append("שלום " + self.client.name + ",")
         self.msg.append("מה שלומך?")
         self.msg.append("אני ז'רמי מחברת הומאוטריט-לאב.")
