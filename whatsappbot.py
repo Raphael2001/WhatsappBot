@@ -3,15 +3,12 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from time import sleep
 import pandas as pd
-import sys
 from client import *
 
 # The Phone number at the file File.xlsx should start witout the 0
 
 
 class WhatsAppBot:
-    sys.setrecursionlimit(500)
-
     def __init__(self, filepath, root):
         self.root = root
         self.driver = webdriver.Chrome()

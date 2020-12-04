@@ -26,4 +26,3 @@ class Clients:
 
     def no_whatsapp_to_excel(self):
         self.no_whatsapp.to_excel("NoWhatsApp.xlsx")
-
